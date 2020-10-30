@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${BD_HEROKU_HOST}
+    driver: org.postgresql.Driver
+    username: ${BD_HEROKU_USER}
+    password: ${BD_HEROKU_PASSWORD}

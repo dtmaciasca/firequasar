@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_fire_quasar
+    driver: org.postgresql.Driver
+    username: user_fire_quasar
+    password: fire_quasar_1234
