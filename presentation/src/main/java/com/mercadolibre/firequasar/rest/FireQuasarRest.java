@@ -20,7 +20,7 @@ public class FireQuasarRest {
     @Autowired
     private FireQuasarService fireQuasarService;
 
-    @PostMapping(value = "/topsecret/", produces = "text/plain;charset=UTF-8")
+    @PostMapping(value = "/topsecret/")
     @Operation(summary = "Obtiene la localización y mensaje con mínimo 2 y máximo 3 satélites")
     public ResponseEntity<Object> getUbicationShapeAndMessage(@RequestBody @Valid SatelliteRequest satelliteRequest) {
         try {
@@ -32,7 +32,7 @@ public class FireQuasarRest {
 
     @PostMapping(value = "/topsecret_split/{satellite_name}", produces = "text/plain;charset=UTF-8")
     @Operation(summary = "Guardar la distancia y mensaje del satélite")
-    public ResponseEntity<String> saveDistanceAndMessageSatellite(@RequestParam String satelliteName, @RequestBody @Valid DistanceMessage distanceMessage) {
+    public ResponseEntity<String> saveDistanceAndMessageSatellite(@PathVariable(name = "satellite_name") String satelliteName, @RequestBody @Valid DistanceMessage distanceMessage) {
         try{
             return new ResponseEntity<>(fireQuasarService.saveDistanceAndMessageSatellite(satelliteName, distanceMessage), HttpStatus.OK);
         }catch (FireQuasarService.FireQuasarServiceException e){
@@ -40,7 +40,7 @@ public class FireQuasarRest {
         }
     }
 
-    @GetMapping(value = "/topsecret_split/", produces = "text/plain;charset=UTF-8")
+    @GetMapping(value = "/topsecret_split/")
     @Operation(summary = "Obtener el último mensaje que se recibió por cada satélite")
     public ResponseEntity<Object> getUbicationShapeAndMessage() {
         try {

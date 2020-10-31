@@ -7,7 +7,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @NoArgsConstructor
 @SuperBuilder(toBuilder = true)
-public class Satellite {
+public class Satellite extends DataControl {
 
     private Integer id;
     private String name;
