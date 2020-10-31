@@ -5,10 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.io.Serializable;
+
 @Getter
 @NoArgsConstructor
 @SuperBuilder
-public class Position {
+public class Position implements Serializable {
 
     private double x;
     private double y;

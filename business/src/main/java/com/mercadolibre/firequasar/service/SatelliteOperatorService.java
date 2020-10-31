@@ -53,17 +53,16 @@ public class SatelliteOperatorService {
                         message.add(new ArrayList<>());
                     }
                     String word = s.getMessage()[i].trim();
-                    if (!word.isEmpty() && message.get(i).stream().noneMatch(m -> m.trim().equals(word))
-                            && (message.get(i).isEmpty() || ((message.get(i).size()>1 && !(message.get(i-1).get(message.get(i-1).size()-1).trim().equalsIgnoreCase(word)))))){
-                        message.get(i).add(s.getMessage()[i]+" ");
+                    if (!word.isEmpty() && message.get(i).stream().noneMatch(m -> m.trim().equals(word))){
+                        message.get(i).add(word+" ");
                     }
                 }
             });
 
             List<String> v = new ArrayList<>();
-            message.forEach(
-                    ms -> v.add(ms.stream().map(Object::toString).collect(Collectors.joining())));
-            return v.stream().map(Object::toString).collect(Collectors.joining())
+            message
+                    .forEach(ms -> v.addAll(ms));
+            return v.stream().map(Object::toString).distinct().collect(Collectors.joining())
                     .trim();
         }catch (Exception e){
             throw new SatelliteOperatorServiceException(e.getMessage(), "Error al interpretar el mensaje: {0}");

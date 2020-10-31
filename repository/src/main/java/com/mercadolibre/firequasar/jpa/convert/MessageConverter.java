@@ -7,9 +7,7 @@ public class MessageConverter implements AttributeConverter<String[], String> {
 
      @Override
     public String convertToDatabaseColumn(String[] message) {
-        return Arrays.toString(message)
-                .replace("[[","[")
-                .replace("]]","]");
+         return Arrays.toString(message).replaceAll("\\[|\\]||\\s", "");
     }
 
     @Override

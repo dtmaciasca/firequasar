@@ -138,7 +138,7 @@ class SatelliteOperatorServiceTest {
         }
 
         @Test
-        void getMessageDeleteWordRepeatedBefore(){
+        void getMessageDeleteWordRepeated(){
 
             givenSatelliteWordRepetead();
             whenGetMessage();
