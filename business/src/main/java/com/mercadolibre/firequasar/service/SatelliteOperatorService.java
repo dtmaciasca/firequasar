@@ -54,7 +54,7 @@ public class SatelliteOperatorService {
                     }
                     String word = s.getMessage()[i].trim();
                     if (!word.isEmpty() && message.get(i).stream().noneMatch(m -> m.trim().equals(word))
-                            && (message.get(i).isEmpty() || (!(message.get(i).size()>1 && message.get(i-1).get(message.get(i-1).size()-1).trim().equalsIgnoreCase(word))))){
+                            && (message.get(i).isEmpty() || ((message.get(i).size()>1 && !(message.get(i-1).get(message.get(i-1).size()-1).trim().equalsIgnoreCase(word)))))){
                         message.get(i).add(s.getMessage()[i]+" ");
                     }
                 }

@@ -27,7 +27,7 @@ public class SatelliteMessageMother {
         return SatelliteMessage.builder()
                 .name("sato")
                 .distance(142.7)
-                .message(new String[]{"este", "", "un", "", ""})
+                .message(new String[]{"", "este", "un", "", ""})
                 .build();
     }
 
@@ -35,7 +35,7 @@ public class SatelliteMessageMother {
         return SatelliteMessage.builder()
                 .name("kenobi")
                 .distance(100.0)
-                .message(new String[]{"este", "", "", "mensaje", ""})
+                .message(new String[]{"este", "", "es", "un", "mensaje"})
                 .build();
     }
 
@@ -43,7 +43,7 @@ public class SatelliteMessageMother {
         return SatelliteMessage.builder()
                 .name("skywalker")
                 .distance(115.5)
-                .message(new String[]{"", "es", "", "", "secreto"})
+                .message(new String[]{"este", "", "un", "mensaje"})
                 .build();
     }
 
@@ -51,7 +51,7 @@ public class SatelliteMessageMother {
         return SatelliteMessage.builder()
                 .name("sato")
                 .distance(142.7)
-                .message(new String[]{"", "este", "un", "", "mensaje"})
+                .message(new String[]{"", "", "es", "", "mensaje","secreto"})
                 .build();
     }
 
